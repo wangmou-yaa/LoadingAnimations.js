@@ -62,7 +62,7 @@ LoadingAnimations 还提供了事件处理函数，用于在图片加载完成�
 LoadingAnimations 兼容所有现代浏览器，包括 Chrome、Firefox、Safari、Edge，以及 Internet Explorer 11。
 
 ## 许可证
-LoadingAnimations 基于 MIT 许可证发布。
+LoadingAnimations 基于 BSD-3 许可证发布。
 
 ## 贡献
 欢迎任何形式的贡献，包括 issue 的报告和 pull request 的提交。
