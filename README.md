@@ -1,4 +1,4 @@
-# PreloaderGFX.js
+# LoadingAnimations.js
 
 LoadingAnimations 是一个轻量级的 JavaScript 库，用于在网页上实现加载动画。它提供了一个简洁的 API 来自定义和控制加载指示器（spinner），适用于各种场景，包括页面加载、图片加载以及异步操作的等待提示。
 
