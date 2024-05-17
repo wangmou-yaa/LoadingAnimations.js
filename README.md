@@ -1,68 +1,82 @@
-# LoadingAnimations.js
-
-LoadingAnimations 是一个轻量级的 JavaScript 库，用于在网页上实现加载动画。它提供了一个简洁的 API 来自定义和控制加载指示器（spinner），适用于各种场景，包括页面加载、图片加载以及异步操作的等待提示。
-
-## 安装
-你可以通过以下方式安装 LoadingAnimations：
-
-### 直接下载
-下载 [loadingAnimations.min.js](https://example.com/path/to/loadingAnimations.min.js) 并引入到你的项目中。
-
-### npm
-如果你使用 npm 包管理器，可以通过运行以下命令来安装：
-```bash
-npm install loadinganimations --save
+LoadingAnimations.js
+欢迎使用LoadingAnimations.js库，这是您在网页加载阶段增强用户体验的一站式解决方案。此库允许您添加优雅且可自定义的加载动画，以便在加载内容时让用户保持参与。
+##特点
+-**自动显示**：当页面开始加载时，微调器会自动显示，一旦所有内容都加载完毕，微调器就会消失。
+-**可自定义样式**：轻松将自定义CSS应用于微调器，以匹配网站的主题和品牌。
+-**图像监控**：可选地监控图像的加载，并根据图像加载的状态控制微调器的可见性。
+-**简单集成**：只需几行代码即可将库集成到您的项目中。
+-**回调函数**：利用提供的回调来处理成功的图像加载或错误场景。
+##入门
+安装
+通过下载文件并在HTML中链接到该文件，或使用CDN链接，将加载动画库包含在项目中。
+</html>
+<script src=“path/to/LoadingAnimations.js”></script>
 ```
-
-## 使用说明
-在 HTML 文件中引入 `loadingAnimations.min.js` 后，可以通过以下步骤使用 LoadingAnimations：
-
-1. 创建 LoadingAnimations 实例，并传入配置选项。
-2. 使用提供的 API 来控制加载动画。
-
-### 示例
+###基本用法
+创建“LoadingAnimations”类的实例开始。
 ```javascript
-const loader = new LoadingAnimations({ observeImages: true });
-
-// 自定义 CSS
-const customCSS = `
-    .custom-spinner {
-        border-left-color: #3498db;
-    }
-`;
-
-// 设置自定义 CSS 和类名
-loader.setCustomCSS(customCSS);
-loader.setCustomSpinnerClass('custom-spinner');
+const-loader=new LoadingAnimations（）；
 ```
-
-## API 文档
-### 构造函数
+###自定义微调器
+使用“setCustomCSS”方法将自定义CSS应用于微调器。
 ```javascript
-new LoadingAnimations(options)
+loader.setCustomCSS(`
+.自定义微调器{
+边框顶部颜色：#3498db；
+}
+`);
+loader.setCustomSpinnerClass（“自定义微调器”）；
 ```
-创建 LoadingAnimations 实例。`options` 是一个对象，包含以下属性：
-- `observeImages`: `boolean` 类型，如果设置为 `true`，则自动监听所有 `<img>` 标签的加载事件。
-
-### 方法
-- `showSpinner()`: 显示加载动画。
-- `hideSpinner()`: 隐藏加载动画。
-- `setCustomCSS(css)`: 应用自定义 CSS 样式。`css` 必须是字符串类型。
-- `setCustomSpinnerClass(className)`: 为加载动画元素添加自定义类名。
-- `show()`: 手动显示加载动画。
-- `hide()`: 手动隐藏加载动画。
-- `bindToPromise(promise)`: 将加载动画绑定到一个 Promise 对象。当 Promise 解决或拒绝时，隐藏加载动画。
-
-### 事件处理
-LoadingAnimations 还提供了事件处理函数，用于在图片加载完成或失败时执行特定操作：
-- `onImageLoaded(img)`: 当图片加载完成时调用。
-- `onError(img)`: 当图片加载失败时调用。
-
-## 浏览器兼容性
-LoadingAnimations 兼容所有现代浏览器，包括 Chrome、Firefox、Safari、Edge，以及 Internet Explorer 11。
-
-## 许可证
-LoadingAnimations 基于 BSD-3 许可证发布。
-
-## 贡献
-欢迎任何形式的贡献，包括 issue 的报告和 pull request 的提交。
+###观察图像
+启用图像观察以仅在加载图像时显示微调器。
+```javascript
+const-loader=新的LoadingAnimations（｛observeImages:true｝）；
+```
+###处理图像加载事件
+重写“onImageLoaded”和“onError”方法来处理图像加载成功和错误的情况。
+```javascript
+类LoadingAnimations{
+// ...
+onImageLoaded（img）{
+console.log（`加载的图像：$｛img.src｝`）；
+}
+onError（img）{
+console.error（`加载图像失败：$｛img.src｝`）；
+}
+// ...
+}
+```
+##方法
+-`setCustomCSS（css）`：为微调器设置自定义css。
+-`setCustomSpinnerClass（className）`：将自定义类添加到微调器元素中。
+-`showSpinner（）`：手动显示微调器。
+-`hideSpinner（）`：手动隐藏微调器。
+-`onImageLoaded（img）`：加载图像时的回调函数。
+-`onError（img）`：加载图像失败时的回调函数。
+##示例
+###基本微调器
+```javascript
+const-loader=new LoadingAnimations（）；
+loader.setCustomCSS(`
+.自定义微调器{
+边框顶部颜色：#3498db；
+}
+`);
+```
+###图像监控
+```javascript
+const-loader=新的LoadingAnimations（｛observeImages:true｝）；
+//微调器将根据图像加载自动显示和隐藏。
+```
+##贡献
+我们欢迎对加载动画库的贡献！请随时提交拉取请求或创建问题以帮助改进库。
+许可证
+该项目是根据麻省理工学院许可证获得许可的——有关详细信息，请参阅[许可证]（许可证）文件。
+##鸣谢
+感谢开源社区为创建这个库提供的灵感和资源。
+```
+### 说明：
+-**功能**：列出了库的主要功能。
+-**入门**：提供了开始使用库的基本步骤，包括安装和基本用法。
+-**方法**：详细介绍了库中可用的方法及其用途。
+-**示例**：提供了使用库的基本示例和图片监控示例。
