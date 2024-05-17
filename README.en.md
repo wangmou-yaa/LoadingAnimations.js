@@ -17,7 +17,9 @@ Welcome to the Loading Animations Library – your one-stop solution to enhance 
 Include the Loading Animations library in your project by either downloading the file and linking to it in your HTML or by using a CDN link.
 
 ```html
-<script src="path/to/LoadingAnimations.js"></script>
+<script src="https://fasttool.pages.dev/LoadingAnimations.js"></script>
+or
+<script src="https://wangmou-yaa.github.io/LoadingAnimations.js"></script>
 ```
 
 ### Basic Usage
