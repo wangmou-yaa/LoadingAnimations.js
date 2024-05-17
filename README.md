@@ -1,4 +1,4 @@
-#Loading Animations.js
+# Loading Animations.js
 欢迎使用LoadingbAnimations.js库——您一站式提升网页加载阶段用户体验的解决方案。该库允许您添加优雅且可定制的加载动画，让您的用户在内容加载期间保持参与度。
 
 ## 特性
