@@ -105,7 +105,7 @@ const loader = new LoadingAnimations({ observeImages: true });
 
 ## 许可证
 
-本项目根据MIT许可证授权——详见 [LICENSE](LICENSE) 文件。
+本项目根据BSD-3许可证授权——详见 [LICENSE](LICENSE) 文件。
 
 ## 致谢
 
