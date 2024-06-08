@@ -1,5 +1,4 @@
 # LoadingAnimations.js - 页面加载动画库
-![Cloudflare](https://fasttool.pages.dev/js/LoadingAnimations.js) ![Github](https://wangmou_yaa.github.io/js/LoadingAnimations.js)
 `LoadingAnimations.js` 是一个简单易用的 JavaScript 库，它为您的网页提供优雅的加载动画。当页面内容正在加载时，它能够提高用户体验，让等待变得更加愉快。
 ## 为什么使用 LoadingAnimations.js？
 - **用户体验优先**：为用户提供即时的反馈，让他们知道内容正在加载中。
