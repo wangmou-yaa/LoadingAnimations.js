@@ -1,112 +1,70 @@
-
-# LoadingAnimations.js
-
-欢迎使用LoadingAnimations.js库——您一站式提升网页加载阶段用户体验的解决方案。该库允许您添加优雅且可定制的加载动画，让您的用户在内容加载期间保持参与度。
-
-## 特性
-
-- **自动显示**：页面开始加载时自动显示旋转器，一切完全加载完成后消失。
-- **可定制样式**：轻松应用自定义CSS以匹配您的网站主题和品牌。
-- **图片监控**：选择性监控图片加载，并根据图片加载状态控制旋转器的可见性。
-- **简单集成**：仅需几行代码即可将库集成到您的项目中。
-- **回调函数**：使用提供的回调处理成功加载图片或错误场景。
-
-## 开始使用
-
-### 安装
-
-通过下载文件并在HTML中链接它，或使用CDN链接将加载动画库包含到您的项目中。
-
+# LoadingAnimations.js - 页面加载动画库
+![Cloudflare](https://fasttool.pages.dev/js/LoadingAnimations.js) ![Github](https://wangmou_yaa.github.io/js/LoadingAnimations.js)
+`LoadingAnimations.js` 是一个简单易用的 JavaScript 库，它为您的网页提供优雅的加载动画。当页面内容正在加载时，它能够提高用户体验，让等待变得更加愉快。
+## 为什么使用 LoadingAnimations.js？
+- **用户体验优先**：为用户提供即时的反馈，让他们知道内容正在加载中。
+- **简单集成**：无需复杂的配置，快速集成到您的项目中。
+- **高度可定制**：支持自定义 CSS，轻松适配您的网站风格。
+- **图像加载监控**：可选择性地监控图像加载状态，提升页面性能感知。
+## 安装
+通过 script 标签直接引入：
+1.
 ```html
-<script src="https://fasttool.pages.dev/LoadingAnimations.js"></script>
-或
-<script src="https://wangmou-yaa.github.io/LoadingAnimations.js"></script>
+<script src="https://fasttool.pages.dev/js/LoadingAnimations.js"></script>
 ```
-
-### 基本用法
-
-创建一个 `LoadingAnimations` 类的实例来开始使用。
-
-```javascript
-const loader = new LoadingAnimations();
+2.
+```html
+<script src="https://wangmou_yaa.gityub.io/js/LoadingAnimations.js"></script>
 ```
-
-### 自定义旋转器
-
-使用 `setCustomCSS` 方法应用自定义CSS到旋转器。
-
+## 使用方法
+### 基础用法
+创建一个 `LoadingAnimations` 实例，并配置您的选项。
 ```javascript
-loader.setCustomCSS(`
-    .custom-spinner {
-        border-top-color: #3498db;
-    }
-`);
+const loader = new LoadingAnimations({
+  observeImages: true // 可选，默认为 false
+});
+```
+### 自定义 CSS
+您可以轻松地设置自定义 CSS，以匹配您的网站风格。
+```javascript
+loader.setCustomCSS('.custom-spinner { border-left-color: blue; }');
+```
+### 自定义 Spinner 类名
+为加载动画添加自定义类名，进一步个性化您的 Spinner。
+```javascript
 loader.setCustomSpinnerClass('custom-spinner');
 ```
-
-### 监控图片
-
-启用图片监控以仅在图片加载时显示旋转器。
-
+### 动态更新配置
+在实例创建后，您可以通过 `updateOptions` 方法动态更新配置。
 ```javascript
-const loader = new LoadingAnimations({ observeImages: true });
+loader.updateOptions({ observeImages: false });
 ```
-
-### 处理图片加载事件
-
-覆盖 `onImageLoaded` 和 `onError` 方法来处理图片加载成功和错误场景。
-
-```javascript
-class LoadingAnimations {
-    // ...
-    onImageLoaded(img) {
-        console.log(`图片已加载: ${img.src}`);
-    }
-
-    onError(img) {
-        console.error(`加载图片失败: ${img.src}`);
-    }
-    // ...
-}
+## 示例代码
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoadingAnimations.js 示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/LoadingAnimations.js"></script>
+</head>
+<body>
+    <h1>页面加载中...</h1>
+    <script>
+        const loader = new LoadingAnimations({
+            observeImages: true
+        });
+        // 设置自定义CSS
+        loader.setCustomCSS('.custom-spinner { border-left-color: red; }');
+        // 设置自定义类名
+        loader.setCustomSpinnerClass('custom-spinner');
+    </script>
+</body>
+</html>
 ```
-
-## 方法
-
-- `setCustomCSS(css)`：为旋转器设置自定义CSS。
-- `setCustomSpinnerClass(className)`：为旋转器元素添加自定义类。
-- `showSpinner()`：手动显示旋转器。
-- `hideSpinner()`：手动隐藏旋转器。
-- `onImageLoaded(img)`：图片加载成功时的回调函数。
-- `onError(img)`：图片加载失败时的回调函数。
-
-## 示例
-
-### 基本旋转器
-
-```javascript
-const loader = new LoadingAnimations();
-loader.setCustomCSS(`
-    .custom-spinner {
-        border-top-color: #3498db;
-    }
-`);
-```
-
-### 图片监控
-
-```javascript
-const loader = new LoadingAnimations({ observeImages: true });
-// 旋转器将根据图片加载自动显示和隐藏。
-```
-
-## 贡献
-
-我们欢迎对加载动画库的贡献！请随时提交拉取请求或创建问题以帮助改进库。
-
-## 许可证
-
-本项目根据BSD-3许可证授权——详见 [LICENSE](LICENSE) 文件。
-
-## 致谢
-
-感谢开源社区提供的灵感和资源，这些都有助于创建此库。
+## 为什么要使用加载动画？
+在现代的网络应用中，用户体验至关重要。当页面内容加载缓慢时，用户可能会感到沮丧并离开。`LoadingAnimations.js` 通过提供反馈，即在内容准备就绪时以动画形式展现，从而提升用户体验，减少等待的焦虑。
+让用户知道系统正在工作，即使是在短暂的延迟期间，也是一种向用户传达关怀的方式。使用 `LoadingAnimations.js`，您可以轻松实现这一点，同时为您的网站增添一丝专业的风采。
+开始使用 `LoadingAnimations.js`，让等待变得不再单调，让用户体验更加流畅愉悦。您还在等什么呢？加入我们，让加载变得更有趣！
+---
+感谢您对 `LoadingAnimations.js` 的关注，我们欢迎任何形式的贡献和建议。如果您有任何问题或需要帮助，请随时提出 Issue。让我们一起打造更好的网络体验！
