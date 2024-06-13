@@ -12,7 +12,7 @@
 ```
 或者：
 ```html
-<script src="https://wangmou_yaa.gityub.io/js/LoadingAnimations.js"></script>
+<script src="https://wangmou_yaa.github.io/js/LoadingAnimations.js"></script>
 ```
 ## 使用方法
 ### 基础用法
