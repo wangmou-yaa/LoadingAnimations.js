@@ -20,7 +20,7 @@
    ```html
    <script src="https://wangmou_yaa.github.io/js/LoadingAnimations.js"></script>
    ```
-2. 通过 npm 安装：
+2. 通过 npm 安装（暂不支持）：
    ```bash
    npm install loading-animations
    ```
