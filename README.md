@@ -14,7 +14,7 @@
 ### 通过 script 标签直接引入
 1. 通过 CDN 引入：
    ```html
-   <script src="https://fasttool.pages.dev/js/LoadingAnimations.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/wangmou-yaa/LoadingAnimations.js@master/LoadingAnimations.js"></script>
    ```
    或者：
    ```html
@@ -147,7 +147,7 @@ loader.loadImage(img);
 </head>
 <body>
     <img src="path/to/your/image.jpg" alt="Description">
-    <script src="https://fasttool.pages.dev/js/LoadingAnimations.js"></script>
+    <script src="[[https://fasttool.pages.dev/js/LoadingAnimations.js](https://cdn.jsdelivr.net/gh/wangmou-yaa/LoadingAnimations.js@master/LoadingAnimations.js)](https://cdn.jsdelivr.net/gh/wangmou-yaa/LoadingAnimations.js@master/LoadingAnimations.js)"></script>
     <script>
         const loader = new LoadingAnimations({
             // ...
@@ -156,4 +156,5 @@ loader.loadImage(img);
 </body>
 </html>
 ```
+
 ---
